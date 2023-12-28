@@ -31,10 +31,16 @@ func main() {
 	if *decode {
 		// Decode: Hexadecimal to binary
 		num.SetString(input, 16)
-		fmt.Println(num.Text(2))
+		binary := num.Text(2)
+		// Add leading zeros if necessary
+		for len(binary)%8 != 0 {
+			binary = "0" + binary
+		}
+		fmt.Println(binary)
 	} else if *encode {
 		// Encode: Binary to hexadecimal
 		num.SetString(input, 2)
 		fmt.Println(num.Text(16))
 	}
 }
+
