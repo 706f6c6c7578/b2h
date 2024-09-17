@@ -1,2 +1,2 @@
 # b2h
-Convert a long binary string to hex and back.
+Convert binary data to hex and back.
